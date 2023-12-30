@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_delivery/home/food_page_body.dart';
+import 'package:flutter_food_delivery/pages/home/food_page_body.dart';
 import 'package:flutter_food_delivery/utils/colors.dart';
 import 'package:flutter_food_delivery/utils/dimensions.dart';
 import 'package:flutter_food_delivery/widgets/big_text.dart';
@@ -15,10 +15,10 @@ class MainFoodPage extends StatefulWidget {
 class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
-    debugPrint("curent height (MediaQuery) is ${MediaQuery.of(context).size.height.toString()}");
-    debugPrint("curent width (MediaQuery) is ${MediaQuery.of(context).size.width.toString()}");
-    debugPrint("curent height (Dimensions.dart) ${Dimensions.screenHeight}");
-    debugPrint("curent width (Dimensions.dart) ${Dimensions.screenWidth}");
+    // debugPrint("curent height (MediaQuery) is ${MediaQuery.of(context).size.height.toString()}");
+    // debugPrint("curent width (MediaQuery) is ${MediaQuery.of(context).size.width.toString()}");
+    // debugPrint("curent height (Dimensions.dart) ${Dimensions.screenHeight}");
+    // debugPrint("curent width (Dimensions.dart) ${Dimensions.screenWidth}");
     return Scaffold(
       body: Column(
         children: [
@@ -65,7 +65,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
             ),
           ),
           // showing the body
-          const FoodPageBody(),
+          const Expanded(
+            child: SingleChildScrollView(
+              child: FoodPageBody(),
+            )
+          ),
         ],
       ),
     );

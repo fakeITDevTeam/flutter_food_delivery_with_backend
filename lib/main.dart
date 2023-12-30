@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_delivery/home/main_food_page.dart';
+import 'package:flutter_food_delivery/pages/home/main_food_page.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -12,6 +12,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    debugPrint("curent height (MediaQuery) is ${MediaQuery.of(context).size.height.toString()}");
+    debugPrint("curent width (MediaQuery) is ${MediaQuery.of(context).size.width.toString()}");
+    
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Food Delivery',
