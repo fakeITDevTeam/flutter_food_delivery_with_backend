@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_food_delivery/utils/colors.dart';
 import 'package:flutter_food_delivery/utils/dimensions.dart';
+import 'package:flutter_food_delivery/widgets/app_column.dart';
 import 'package:flutter_food_delivery/widgets/big_text.dart';
 import 'package:flutter_food_delivery/widgets/icon_and_text.dart';
 import 'package:flutter_food_delivery/widgets/small_text.dart';
@@ -30,8 +31,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   }
 
   @override
-  void dispose() {
+  void dispose() {    
     pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -238,47 +240,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
               child: Container(
                 padding: EdgeInsets.only(top: Dimensions.height15, left: 15, right: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const BigText(text: "Chinese Side"),
-                    SizedBox(height: Dimensions.height10,),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(5, (index) => const Icon(Icons.star, color: AppColors.mainColor, size: 15,),),
-                        ),
-                        const SizedBox(width: 10,),
-                        const SmallText(text: "4.5"),
-                        const SizedBox(width: 10,),
-                        const SmallText(text: "1287"),
-                        const SizedBox(width: 10,),
-                        const SmallText(text: "comments"),
-                      ],
-                    ),
-                    SizedBox(height: Dimensions.height20,),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndText(
-                          icon: Icons.circle_sharp, 
-                          text: "Normal",                         
-                          iconColor: AppColors.iconColor1
-                        ),
-                        IconAndText(
-                          icon: Icons.location_on, 
-                          text: "1.7km",                         
-                          iconColor: AppColors.mainColor
-                        ),
-                        IconAndText(
-                          icon: Icons.access_time_rounded, 
-                          text: "32min",                         
-                          iconColor: AppColors.iconColor2
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                child: const AppColumn(text: "Chinese Side"),
               ),
             ),
           ),
